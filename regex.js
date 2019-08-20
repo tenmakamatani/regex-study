@@ -6,6 +6,16 @@ function test(regex, text) {
     }
 }
 
+/*
+    javascriptでは、new を使う方法、デリミタ(「/」のみ)を使う方法の二種類で正規表現を生み出せる
+    ① new を使う方法
+      const regex = new RegExp("[A-Za-z0-9]+");
+    ② デリミタを使う方法
+      const regex = /[A-Za-z0-9]+/;
+    このファイル内ではデリミタを使うことにしている
+    デリミタを使う場合、デリミタに使った文字が文字列中に出てくるとエスケープしなければならない(そもそも「/」はメタ文字列ではない)
+*/
+
 // .
 // 全ての文字列にマッチ
 const regex1 = /./;
@@ -63,3 +73,8 @@ const regex15 = /ab{3}c/; // 3回
 const regex16 = /ab{1,3}c/; // 1回~3回
 const regex17 = /ab{1,}c/; // 1回以上
 const regex18 = /ab{,3}c/; // 3回以下
+
+// \
+// \.のように使うことでメタ文字列をエスケープできる
+// 下は"https://twitter.com/home?lang=ja"にマッチ、デリミタに「/」を使ったので文字列中の「/」はエスケープ
+const regex19 = /https:\/\/twitter.com\/home\?lang=ja/;
