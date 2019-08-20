@@ -1,5 +1,11 @@
 "use strict";
 
+function test(regex, text) {
+    if (regex.test(text)) {
+        console.log("matched!");
+    }
+}
+
 // .
 // 全ての文字列にマッチ
 const regex1 = new RegExp(".");
@@ -51,8 +57,9 @@ const regex13 = new RegExp("(ab)+c");
 // "aaac", "abbc"など
 const regex14 = new RegExp("a(aa|bb|cc)c");
 
-function test(regex, text) {
-    if (regex.test(text)) {
-        console.log("matched!");
-    }
-}
+// {}
+// {}内の数字だけ前の文字を繰り返ししている文字列にマッチ
+const regex15 = new RegExp("ab{3}c"); // 3回
+const regex16 = new RegExp("ab{1,3}c"); // 1回~3回
+const regex17 = new RegExp("ab{1,}c"); // 1回以上
+const regex18 = new RegExp("ab{,3}c"); // 3回以下
