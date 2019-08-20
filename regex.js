@@ -50,3 +50,9 @@ const regex12 = new RegExp("a[^bc]c");
 const regex13 = new RegExp("(ab)+c");
 // "aaac", "abbc"など
 const regex14 = new RegExp("a(aa|bb|cc)c");
+
+function test(regex, text) {
+    if (regex.test(text)) {
+        console.log("matched!");
+    }
+}
