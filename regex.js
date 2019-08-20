@@ -72,7 +72,6 @@ const regex14 = /a(aa|bb|cc)c/;
 const regex15 = /ab{3}c/; // 3回
 const regex16 = /ab{1,3}c/; // 1回~3回
 const regex17 = /ab{1,}c/; // 1回以上
-const regex18 = /ab{,3}c/; // 3回以下
 
 // \
 // \.のように使うことでメタ文字列をエスケープできる
